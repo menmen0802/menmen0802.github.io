@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>react.js组件传值 - Hexo</title>
+  <title>Hooks工作原理 - Hexo</title>
   
 
   
@@ -307,7 +307,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="full" class='cover-wrapper react dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -383,7 +383,7 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <article class="article post white-box reveal md shadow article-type-react" id="react" itemscope itemprop="blogPost">
   
 
 
@@ -393,7 +393,7 @@
     
     
       <h1 class="title">
-        react.js组件传值
+        Hooks工作原理
       </h1>
       <div class='new-meta-box'>
         
@@ -417,7 +417,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Dec 26, 2020</p>
+    <p>发布于：Dec 27, 2020</p>
   </a>
 </div>
 
@@ -428,7 +428,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="react.js组件传值" data-path="/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/">
+      <div id="lc-pv" data-title="Hooks工作原理" data-path="/2020/12/27/Hooks%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -445,128 +445,52 @@
 
 
   
-  <p>我是组件传值<br>hexo deploy推送</p>
+  <p>我们大部分 React 类组件可以保存状态，而函数组件不能？ 并且类组件具有生命周期，而函数组件却不能？</p>
+<blockquote>
+<p>React 早期版本，类组件可以通过继承PureComponent来优化一些不必要的渲染，相对于函数组件，React 官网没有提供对应的方法来缓存函数组件以减少一些不必要的渲染，直接 16.6 出来的 React.memo函数。<br>React 16.8 新出来的Hook可以让React 函数组件具有状态，并提供类似 <strong>componentDidMount</strong>和<strong>componentDidUpdate</strong>等生命周期方法。<br><strong>Hooks不会替换类，它们只是一个你可以使用的新工具。</strong></p>
+</blockquote>
+<h2 id="Hooks的例子"><a href="#Hooks的例子" class="headerlink" title="Hooks的例子:"></a>Hooks的例子:</h2><p>OneTimeButton 是函数组件，所做的事情就是当我们点击的时候调用 sayHi 方法函数组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">OneTimeButton</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;button onClick=&#123;props.onClick&#125;&gt;</span><br><span class="line">        点我</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;yo&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;OneTimeButton onClick=&#123;sayHi&#125;/&gt;,</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#root&#x27;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>让这个组件做的是，跟踪它是否被点击，如果被点击了，禁用按钮，就像一次性开关一样。</p>
+<p>但它需要一个state，因为是一个函数，它不可能有状态(React 16.8之前)，所以需要重构成类。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OneTimeButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    clicked: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.props.onClick();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Ok, no more clicking.</span></span><br><span class="line">    <span class="built_in">this</span>.setState(&#123; <span class="attr">clicked</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;button</span><br><span class="line">        onClick=&#123;<span class="built_in">this</span>.handleClick&#125;</span><br><span class="line">        disabled=&#123;<span class="built_in">this</span>.state.clicked&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        You Can Only Click Me Once</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="使用-Hook-添加-State"><a href="#使用-Hook-添加-State" class="headerlink" title="使用 Hook 添加 State"></a>使用 Hook 添加 State</h2><p>用新的　useState　hook向普通函数组件添加状态：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">OneTimeButton</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [clicked, setClicked] = useState(<span class="literal">false</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">doClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    props.onClick();</span><br><span class="line">    setClicked(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;button</span><br><span class="line">      onClick=&#123;clicked ? <span class="literal">undefined</span> : doClick&#125;</span><br><span class="line">      disabled=&#123;clicked&#125;</span><br><span class="line">    &gt;</span><br><span class="line">      点我</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>useState是一个hook。 它的名字以“use”开头（这是Hooks的规则之一 - 它们的<strong>名字必须以“use”开头</strong>）。</p>
+<p>useState hook 的参数是 <strong>state 的初始值</strong>，<strong>返回一个包含两个元素的数组</strong>:当前state和一个用于更改state 的函数。</p>
+<p>类组件有一个大的state对象，一个函数this.setState一次改变整个state对象。</p>
+<p><strong>函数组件根本没有状态</strong>，但useState hook允许我们在需要时添加很小的<strong>状态块</strong>。 因此，如果只需要一个布尔值，我们就可以创建一些状态来保存它。</p>
+<p>由于Hook以某种特殊方式创建这些状态，并且在函数组件内也没有像setState函数来更改状态，因此 Hook 需要一个函数来更新每个状态。 所以 useState 返回是一对对应关系：一个值，一个更新该值函数。 当然，值可以是任何东西 - 任何JS类型 - 数字，布尔值，对象，数组等。</p>
+<h2 id="Hooks-的特点"><a href="#Hooks-的特点" class="headerlink" title="Hooks 的特点"></a>Hooks 的特点</h2><p><strong>调用顺序规则 (它们每次必须以相同的顺序调用)；</strong></p>
+<p>假设有以下这个组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AudioPlayer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [volume, setVolume] = useState(<span class="number">80</span>);</span><br><span class="line">  <span class="keyword">const</span> [position, setPosition] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [isPlaying, setPlaying] = useState(<span class="literal">false</span>);</span><br><span class="line">  .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它调用useState 3次，React 会在第一次渲染时将这三个 hook 放入 Hooks 数组中。</p>
+<p>下次渲染时，同样的3个hooks以相同的顺序被调用，所以React可以查看它的数组，并发现已经在位置0有一个useState hook ，所以React不会创建一个新状态，而是返回现有状态。</p>
+<p>这就是React能够在多个函数调用中创建和维护状态的方式，即使变量本身每次都超出作用域。</p>
+<h2 id="Hooks-的规则"><a href="#Hooks-的规则" class="headerlink" title="Hooks 的规则"></a>Hooks 的规则</h2><p>自定义 hooks 函数只需要遵守规则 3 ：它们的名称必须以“<strong>use</strong>”为前缀。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AudioPlayer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Extract these 3 pieces of state:</span></span><br><span class="line">  <span class="keyword">const</span> [volume, setVolume] = useState(<span class="number">80</span>);</span><br><span class="line">  <span class="keyword">const</span> [position, setPosition] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [isPlaying, setPlaying] = useState(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// &lt; beautiful audio player goes here &gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建一个专门处理这些状态的新函数，并使用一些额外的方法返回一个对象，以便更容易启动和停止播放，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">usePlayerState</span>(<span class="params">lengthOfClip</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [volume, setVolume] = useState(<span class="number">80</span>);</span><br><span class="line">  <span class="keyword">const</span> [position, setPosition] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [isPlaying, setPlaying] = useState(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> stop = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setPlaying(<span class="literal">false</span>);</span><br><span class="line">    setPosition(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> start = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setPlaying(<span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    volume,</span><br><span class="line">    position,</span><br><span class="line">    isPlaying,</span><br><span class="line">    setVolume,</span><br><span class="line">    setPosition,</span><br><span class="line">    start,</span><br><span class="line">    stop</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样提取状态的一个好处是可以将<strong>相关的逻辑和行为组合在一起</strong>。可以提取一组状态和相关事件处理程序以及其他更新逻辑，这不仅可以<strong>清理组件代码</strong>，还可以使这些逻辑和行为可重用。</p>
+<p>通过在自定义hooks中调用自定义hooks，可以将hooks组合在一起。</p>
+<p>hooks只是函数，当然，函数可以调用其他函数。</p>
+<p>Hooks 提供了一种新的方式来处理React中的问题，其中的思想是很有意思且新奇的。</p>
 
   
   
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-              
-            
-              
-                <p>本文永久链接是：<a href=http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/>http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/</a></p>
-              
-            
-          </blockquote>
-        </div>
-      
-      
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-26T09:15:18+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 26, 2020</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/&title=react.js组件传值 - Hexo&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/&title=react.js组件传值 - Hexo&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/&title=react.js组件传值 - Hexo&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
   
   
 
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/27/Hooks%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Hooks工作原理</p>
-          <p class='content'>我们大部分 React 类组件可以保存状态，而函数组件不能？ 并且类组件具有生命周期，而函数组件却不能？
-
-React 早期版本，类组件可以通过继承PureComponent来优化一些不必要的渲...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/12/25/promise%E6%80%BB%E7%BB%93/'>
-          <p class='title'>promise总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>这是我的博客第一篇hexo new 文章名称npm install hexo-deployer-git –savehexo cleanhexo generatehexo deploy  
+        <a class='next' href='/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/'>
+          <p class='title'>react.js组件传值<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>我是组件传值hexo deploy推送
 </p>
         </a>
       
@@ -600,6 +524,20 @@ React 早期版本，类组件可以通过继承PureComponent来优化一些不�
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-text">Hooks的例子:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Hook-%E6%B7%BB%E5%8A%A0-State"><span class="toc-text">使用 Hook 添加 State</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks-%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">Hooks 的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hooks-%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-text">Hooks 的规则</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -615,8 +553,8 @@ React 早期版本，类组件可以通过继承PureComponent来优化一些不�
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="react.js组件传值";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
