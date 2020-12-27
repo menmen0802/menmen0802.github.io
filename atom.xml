@@ -43,14 +43,14 @@
     <link href="http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/"/>
     <id>http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/</id>
     <published>2020-12-26T01:00:11.000Z</published>
-    <updated>2020-12-26T01:15:18.371Z</updated>
+    <updated>2020-12-27T12:30:03.947Z</updated>
     
-    <content type="html"><![CDATA[<p>我是组件传值<br>hexo deploy推送</p>]]></content>
+    <content type="html"><![CDATA[<p>我是组件传值<br>hexo clean<br>hexo generate<br>hexo deploy推送</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;我是组件传值&lt;br&gt;hexo deploy推送&lt;/p&gt;
+    <summary type="html">&lt;p&gt;我是组件传值&lt;br&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy推送&lt;/p&gt;
 </summary>
       
     
