@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-28T12:57:33.616Z</updated>
+  <updated>2020-12-29T12:57:53.421Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基础类型声明</title>
+    <link href="http://example.com/2020/12/29/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E/"/>
+    <id>http://example.com/2020/12/29/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E/</id>
+    <published>2020-12-29T12:57:53.000Z</published>
+    <updated>2020-12-29T12:57:53.421Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ES6/Class基本语法</title>
