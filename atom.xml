@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-29T13:00:35.687Z</updated>
+  <updated>2021-01-11T14:49:39.346Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原型及原型链</title>
+    <link href="http://example.com/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://example.com/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/</id>
+    <published>2021-01-11T14:49:16.000Z</published>
+    <updated>2021-01-11T14:49:39.346Z</updated>
+    
+    <content type="html"><![CDATA[<p>原型及原型链</p><h2 id="为什么需要原型及原型链？"><a href="#为什么需要原型及原型链？" class="headerlink" title="为什么需要原型及原型链？"></a>为什么需要原型及原型链？</h2><p>看一个例子：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">  <span class="built_in">this</span>.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(age + <span class="string">&quot;岁的&quot;</span> + name + <span class="string">&quot;在吃饭。&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">&quot;menmen&quot;</span>, <span class="number">24</span>);</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> Person(<span class="string">&quot;menmen&quot;</span>, <span class="number">24</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p1.eat === p2.eat); <span class="comment">// false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>对于同一个函数，我们通过 <code>new </code>生成出来的实例，都会开出新的一块堆区，所以上面代码中 <code>person 1</code> 和 <code>person 2</code> 的吃饭是不同的。</p><p>例如，内存空间，总共就那么点内存，在不停的往里面存内容，最后内存不足。</p><p>所以，要想个法，建个类似于共享库的对象，这样就可以在需要的时候，调用一个类似共享库的对象，让实例能够沿着某个线索去找到自己归处。</p><p>而这个线索，在前端中就是原型链 <code>prototype</code>。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过构造函数的 Person 的 prototype 属性找到 Person 的原型对象</span></span><br><span class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;吃饭&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">&quot;menmen&quot;</span>, <span class="number">24</span>);</span><br><span class="line"><span class="keyword">let</span> p2 = <span class="keyword">new</span> Person(<span class="string">&quot;梁峻荣&quot;</span>, <span class="number">24</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p1.eat === p2.eat); <span class="comment">// true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>通过分享的形式，让这两个实例对象指向相同的位置了.</p><blockquote><p>每个对象都有原型，原型也是对象，原型也有原型，就形成了一个原型链 </p></blockquote><p>原型链作用： 对象访问成员的访问规则：如果对象访问某个成员，先看自己有没有，自己有就访问自己的，自己没有就访问原型的，如果原型也没有，就沿着原型链一直往上查找，直到找到为止，如果找到头还没有找到，就返回<code>undefined</code>或报错</p><h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><p>原型对象是为了解决构造函数的内存浪费<br>原型对象的优点 ：</p><ol><li>解决构造函数的内存浪费 </li><li>解决变量名污染</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line"><span class="built_in">this</span>.name=name</span><br><span class="line">    <span class="built_in">this</span>.age=age</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.say=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`我是<span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span>,年龄<span class="subst">$&#123;<span class="built_in">this</span>.age&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1=<span class="keyword">new</span> Person(<span class="string">&#x27;jack&#x27;</span>,<span class="number">15</span>)</span><br><span class="line">p1.say()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;原型及原型链&lt;/p&gt;
+&lt;h2 id=&quot;为什么需要原型及原型链？&quot;&gt;&lt;a href=&quot;#为什么需要原型及原型链？&quot; class=&quot;headerlink&quot; title=&quot;为什么需要原型及原型链？&quot;&gt;&lt;/a&gt;为什么需要原型及原型链？&lt;/h2&gt;&lt;p&gt;看一个例子：&lt;/p&gt;
+&lt;figu</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>基础类型</title>
