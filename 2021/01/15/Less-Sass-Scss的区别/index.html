@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - Hexo</title>
+  <title>Less/Sass/Scss的区别 - Hexo</title>
   
 
   
@@ -58,7 +56,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +307,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -385,268 +383,226 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/">
+      <h1 class="title">
         Less/Sass/Scss的区别
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 15, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
-        Less/Sass/Scss的区别
-一. Sass/Scss、Less是什么?
-Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，Sass语法属于缩排语法，比css比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。
-Less也是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量，继承，运算， ...
-      
-    
+      <div id="lc-pv" data-title="Less/Sass/Scss的区别" data-path="/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-15</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>Less/Sass/Scss的区别</p>
+<h2 id="一-Sass-Scss、Less是什么"><a href="#一-Sass-Scss、Less是什么" class="headerlink" title="一. Sass/Scss、Less是什么?"></a>一. Sass/Scss、Less是什么?</h2><ul>
+<li>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，Sass语法属于缩排语法，比css比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。</li>
+<li>Less也是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量，继承，运算， 函数. Less 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可在服务端运行 (借助 Node.js)。</li>
+<li>Sass与Scss是什么关系?<br>Sass的缩排语法，对于写惯css前端的web开发者来说很不直观，也不能将css代码加入到Sass里面，因此sass语法进行了改良，Sass 3就变成了Scss(sassy css)。与原来的语法兼容，只是用{}取代了原来的缩进。</li>
+</ul>
+<h2 id="二-Sass-Scss与Less区别？"><a href="#二-Sass-Scss与Less区别？" class="headerlink" title="二. Sass/Scss与Less区别？"></a>二. Sass/Scss与Less区别？</h2><p><strong>Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。</strong></p>
+<p><strong>编译环境不一样</strong></p>
+<blockquote>
+<p>Sass的安装需要Ruby环境，是在服务端处理的，而Less是需要引入less.js来处理Less代码输出css到浏览器，也可以在开发环节使用Less，然后编译成css文件，直接放到项目中，也有 Less.app、SimpleLess、CodeKit.app这样的工具，也有在线编译地址。<br>注：两种均可以用IDE编辑器进行编译，例如：应用Hbulilder等</p>
+</blockquote>
+<h3 id="Less与Sass处理机制不同："><a href="#Less与Sass处理机制不同：" class="headerlink" title="Less与Sass处理机制不同："></a>Less与Sass处理机制不同：</h3><p>Less是通过客户端处理的，Sass是通过服务端处理，相比较之下Less解析会比Sass慢一点。</p>
+<h3 id="变量符不一同"><a href="#变量符不一同" class="headerlink" title="变量符不一同"></a>变量符不一同</h3><p>Less是@，而Sass是$，而且变量的作用域也不一样。</p>
+<p>Sass没有局部变量，满足就近原则。Less中{}内定义的变量为局部变量。</p>
+<h3 id="Less没有输出设置，Sass提供4中输出选项"><a href="#Less没有输出设置，Sass提供4中输出选项" class="headerlink" title="Less没有输出设置，Sass提供4中输出选项"></a>Less没有输出设置，Sass提供4中输出选项</h3><p>输出样式的风格可以有四种选择，默认为nested</p>
+<p>nested：嵌套缩进的css代码<br>expanded：展开的多行css代码<br>compact：简洁格式的css代码<br>compressed：压缩后的css代码</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/>http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-15T22:53:19+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 15, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/14/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
-        什么是闭包？
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        什么是闭包？
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/&title=Less/Sass/Scss的区别 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/&title=Less/Sass/Scss的区别 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/&title=Less/Sass/Scss的区别 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/01/14/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/'>
+          <p class='title'>什么是闭包？<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>什么是闭包？
 
 闭包（closure）是 JavasSript 的一大难点，也是它的特色。很多高级应用都要依靠闭包来实现。
 
 闭包就是能够读取其他函数内部变量的函数。
-例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包？先介绍一下全局变量和局部变量的优缺点
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/14/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/'>
-            Read More
-          </a>
-        </div>
+例如在javascript...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/">
-        JavaScript深入之new的模拟实现
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        newJavaScript深入之new的模拟实现
-
-new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
-
-模拟 new 之前，先看看 new 实现了哪些功能。例子：
-12345678910111213141516171819202122// Otaku 御宅族，简称宅function Otaku (name, age) &#123;    this.name = ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        cookie、sessionStorage和localStorage的区别
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        cookie、sessionStorage和localStorage的区别
-cookie能存储内容较小，在4k左右，一般用作保存用户登录状态、记住密码，记住账号使用。不清除的话会一直存在，可以设置过期时间自动清除，设置的时候可以设置在不同的域下面。每次在和服务端交互都会放在header里面，所以若是储存太多会影响性能。
-localStoragelocalStorage生命周期是永久，这意味着...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型及原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原型及原型链
-为什么需要原型及原型链？看一个例子：
-12345678910111213function Person(name, age) &#123;  this.name = name;  this.age = age;  this.eat = function() &#123;    console.log(age + &quot;岁的&quot; + name + &quot;在吃饭...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -654,87 +610,28 @@ localStoragelocalStorage生命周期是永久，这意味着...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-Sass-Scss%E3%80%81Less%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">一. Sass&#x2F;Scss、Less是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-Sass-Scss%E4%B8%8ELess%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">二. Sass&#x2F;Scss与Less区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Less%E4%B8%8ESass%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E4%B8%8D%E5%90%8C%EF%BC%9A"><span class="toc-text">Less与Sass处理机制不同：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%AC%A6%E4%B8%8D%E4%B8%80%E5%90%8C"><span class="toc-text">变量符不一同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Less%E6%B2%A1%E6%9C%89%E8%BE%93%E5%87%BA%E8%AE%BE%E7%BD%AE%EF%BC%8CSass%E6%8F%90%E4%BE%9B4%E4%B8%AD%E8%BE%93%E5%87%BA%E9%80%89%E9%A1%B9"><span class="toc-text">Less没有输出设置，Sass提供4中输出选项</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -744,14 +641,14 @@ localStoragelocalStorage生命周期是永久，这意味着...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Less/Sass/Scss的区别";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

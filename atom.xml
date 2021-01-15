@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-14T15:22:41.966Z</updated>
+  <updated>2021-01-15T14:53:19.360Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Less/Sass/Scss的区别</title>
+    <link href="http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://example.com/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2021-01-15T14:52:51.000Z</published>
+    <updated>2021-01-15T14:53:19.360Z</updated>
+    
+    <content type="html"><![CDATA[<p>Less/Sass/Scss的区别</p><h2 id="一-Sass-Scss、Less是什么"><a href="#一-Sass-Scss、Less是什么" class="headerlink" title="一. Sass/Scss、Less是什么?"></a>一. Sass/Scss、Less是什么?</h2><ul><li>Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，Sass语法属于缩排语法，比css比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。</li><li>Less也是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量，继承，运算， 函数. Less 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可在服务端运行 (借助 Node.js)。</li><li>Sass与Scss是什么关系?<br>Sass的缩排语法，对于写惯css前端的web开发者来说很不直观，也不能将css代码加入到Sass里面，因此sass语法进行了改良，Sass 3就变成了Scss(sassy css)。与原来的语法兼容，只是用{}取代了原来的缩进。</li></ul><h2 id="二-Sass-Scss与Less区别？"><a href="#二-Sass-Scss与Less区别？" class="headerlink" title="二. Sass/Scss与Less区别？"></a>二. Sass/Scss与Less区别？</h2><p><strong>Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。</strong></p><p><strong>编译环境不一样</strong></p><blockquote><p>Sass的安装需要Ruby环境，是在服务端处理的，而Less是需要引入less.js来处理Less代码输出css到浏览器，也可以在开发环节使用Less，然后编译成css文件，直接放到项目中，也有 Less.app、SimpleLess、CodeKit.app这样的工具，也有在线编译地址。<br>注：两种均可以用IDE编辑器进行编译，例如：应用Hbulilder等</p></blockquote><h3 id="Less与Sass处理机制不同："><a href="#Less与Sass处理机制不同：" class="headerlink" title="Less与Sass处理机制不同："></a>Less与Sass处理机制不同：</h3><p>Less是通过客户端处理的，Sass是通过服务端处理，相比较之下Less解析会比Sass慢一点。</p><h3 id="变量符不一同"><a href="#变量符不一同" class="headerlink" title="变量符不一同"></a>变量符不一同</h3><p>Less是@，而Sass是$，而且变量的作用域也不一样。</p><p>Sass没有局部变量，满足就近原则。Less中{}内定义的变量为局部变量。</p><h3 id="Less没有输出设置，Sass提供4中输出选项"><a href="#Less没有输出设置，Sass提供4中输出选项" class="headerlink" title="Less没有输出设置，Sass提供4中输出选项"></a>Less没有输出设置，Sass提供4中输出选项</h3><p>输出样式的风格可以有四种选择，默认为nested</p><p>nested：嵌套缩进的css代码<br>expanded：展开的多行css代码<br>compact：简洁格式的css代码<br>compressed：压缩后的css代码</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Less/Sass/Scss的区别&lt;/p&gt;
+&lt;h2 id=&quot;一-Sass-Scss、Less是什么&quot;&gt;&lt;a href=&quot;#一-Sass-Scss、Less是什么&quot; class=&quot;headerlink&quot; title=&quot;一. Sass/Scss、Less是什么?&quot;&gt;&lt;/a&gt;一.</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>什么是闭包？</title>
