@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-15T14:53:19.360Z</updated>
+  <updated>2021-01-17T13:43:02.378Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>水平垂直居中</title>
+    <link href="http://example.com/2021/01/17/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <id>http://example.com/2021/01/17/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</id>
+    <published>2021-01-17T13:42:44.000Z</published>
+    <updated>2021-01-17T13:43:02.378Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>定位： 盒子宽高已知</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>; </span><br><span class="line"><span class="selector-tag">left</span>: 50%; <span class="selector-tag">top</span>: 50%;</span><br><span class="line"><span class="selector-tag">margin-left</span><span class="selector-pseudo">:-</span>自身一半宽度;</span><br><span class="line"><span class="selector-tag">margin-top</span>: <span class="selector-tag">-</span>自身一半高度;</span><br></pre></td></tr></table></figure><ol start="2"><li>table-cell布局</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">父级：</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span>; </span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>; </span><br><span class="line">子级：</span><br><span class="line"><span class="selector-tag">margin</span>: 0 <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure><ol start="3"><li>定位 + <code>transform</code>   适用于 子盒子 宽高不定时；</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span> / <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="comment">/*top和left偏移各为50%*/</span></span><br><span class="line"><span class="selector-tag">top</span>: 50%;</span><br><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line"><span class="comment">/*translate(-50%,-50%) 偏移自身的宽和高的-50%*/</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">-50</span>%, <span class="selector-tag">-50</span>%); </span><br></pre></td></tr></table></figure><ol start="4"><li>flex 布局：</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">父级： </span><br><span class="line"> <span class="comment">/*flex 布局*/</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="comment">/*实现垂直居中*/</span></span><br><span class="line"><span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="comment">/*实现水平居中*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure><ol start="5"><li>水平方向居中</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin-left</span> : 50% ; </span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(<span class="selector-tag">-50</span>%);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;定位： 盒子宽高已知&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Less/Sass/Scss的区别</title>
