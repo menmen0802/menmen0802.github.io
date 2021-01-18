@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-17T13:43:02.378Z</updated>
+  <updated>2021-01-18T14:42:33.819Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack常见插件和loader及作用</title>
+    <link href="http://example.com/2021/01/18/webpack%E5%B8%B8%E8%A7%81%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%8F%8A%E4%BD%9C%E7%94%A8/"/>
+    <id>http://example.com/2021/01/18/webpack%E5%B8%B8%E8%A7%81%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%8F%8A%E4%BD%9C%E7%94%A8/</id>
+    <published>2021-01-18T14:42:18.000Z</published>
+    <updated>2021-01-18T14:42:33.819Z</updated>
+    
+    <content type="html"><![CDATA[<p>webpack常见插件和loader及作用</p><h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>webpack将一切文件视为模块，但是webpack原生是只能解析js文件，如果想将其他文件也打包的话，就会用到loader。 所以Loader的作用是让webpack拥有了加载和解析非JavaScript文件的能力。</p><p><strong>常见loader</strong></p><ul><li>style-loader：将CSS添加到DOM的内联样式标签style里</li><li>css-loader：允许将CSS文件通过require的方式引入，并返回CSS代码</li><li>less-loader：处理less</li><li>sass-loader：处理sass</li><li>postcss-loader：用postcss来处理CSS</li><li>file-loader：分发文件到output目录并返回相对路径</li><li>url-loader 和 file-loader 类似，但是当文件小于设定的limit时可以返回一个Data Url</li><li>html-minify-loader：压缩HTML文件</li><li>babel-loader：把ES6文件转换成ES5文件</li></ul><h2 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h2><p>loader 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。</p><p><strong>常见插件</strong></p><ul><li>html-webpack-plugin：会在打包结束之后自动创建一个index.html, 并将打包好的JS自动引入到这个文件中</li><li>webpack-dev-server：启动一个本地临时的服务器，可以设置端口，支持热更新</li><li>clean-webpack-plugin：每次打包之前先将指定的文件夹清空再生成新的文件</li><li>copy-webpack-plugin：打包相关的文档（如word等）。文档内容是固定不变的, 只需要将对应的文件拷贝到打包目录中即可</li><li>commons-chunk-plugin：提取公共代码</li><li>define-plugin：定义环境变量</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;webpack常见插件和loader及作用&lt;/p&gt;
+&lt;h2 id=&quot;loader&quot;&gt;&lt;a href=&quot;#loader&quot; class=&quot;headerlink&quot; title=&quot;loader&quot;&gt;&lt;/a&gt;loader&lt;/h2&gt;&lt;p&gt;webpack将一切文件视为模块，但是webpac</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>水平垂直居中</title>
