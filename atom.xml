@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-18T14:42:33.819Z</updated>
+  <updated>2021-01-19T14:47:22.785Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生命周期</title>
+    <link href="http://example.com/2021/01/19/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://example.com/2021/01/19/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2021-01-19T14:46:35.000Z</published>
+    <updated>2021-01-19T14:47:22.785Z</updated>
+    
+    <content type="html"><![CDATA[<p>react.js 生命周期</p><p><strong>react 生命周期分三种状态: 1. 实例期 2.存在期 3.销毁期</strong></p><ul><li><p><strong>实例期</strong></p><p>1、constructor()<br>数据初始化；</p><p>2、getDerivedStateFromProps(props,state)<br>调用render之前调用，并在初始挂载以及后续更新时都会被调用，返回一个对象来更新state，若返回null则不更新任何内容；</p><p>3、render<br>检查props和state的变化并返回虚拟dom；</p></li></ul><p>   4、componentDidMount()<br>组件挂载后立即调用，依赖于dom节点的初始化放在这里。可直接调用setState，将触发额外渲染，此渲染会发生在浏览器更新屏幕之前；</p><ul><li><p><strong>存在期</strong></p><p>5、 getDerivedStateFromProps(props,state)<br>调用render之前调用，并在初始挂载以及后续更新时都会被调用，返回一个对象来更新state，若返回null则不更新任何内容；</p><p>6、shouldComponentUpdate(nextProps, nextState)<br>判断组件的输出是否受当前state或props更改的影响，用来控制组件是否重新渲染；</p><p>7、render<br>检查props和state的变化并返回虚拟dom；</p><p>8、getSnapshotBeforeUpdate(prevProps,prevState)<br>组件初始化时不调用，只有在组件将要更新时才调用，此时可以修改state；</p><p>9、componentDidUpdate()<br>组件初始化时不调用，组件更新完成后调用，此时可以获取dom节点；</p></li><li><p><strong>销毁期</strong></p><p>10、componentWillUnmount()<br>在此处完成组件的卸载及数据的销毁；</p></li></ul><p><img src="https://img-blog.csdnimg.cn/20200910162829508.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01lbnFx,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200910162829508.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01lbnFx,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;react.js 生命周期&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;react 生命周期分三种状态: 1. 实例期 2.存在期 3.销毁期&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;实例期&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、constructor()&lt;br&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>webpack常见插件和loader及作用</title>
