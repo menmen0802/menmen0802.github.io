@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-19T14:47:22.785Z</updated>
+  <updated>2021-01-21T12:47:35.019Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>节流防抖</title>
+    <link href="http://example.com/2021/01/21/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/"/>
+    <id>http://example.com/2021/01/21/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/</id>
+    <published>2021-01-21T12:47:19.000Z</published>
+    <updated>2021-01-21T12:47:35.019Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。</strong></p><h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p>函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。</p><p>如，持续触发scroll事件时，并不执行handle函数，当1000毫秒内没有触发scroll事件时，才会延时触发scroll事件。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 防抖</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, wait</span>) </span>&#123;    </span><br><span class="line">    <span class="keyword">var</span> timeout = <span class="literal">null</span>;    </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        </span><br><span class="line">        <span class="keyword">if</span>(timeout !== <span class="literal">null</span>)   <span class="built_in">clearTimeout</span>(timeout);        </span><br><span class="line">        timeout = <span class="built_in">setTimeout</span>(fn, wait);    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;    </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random()); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 滚动事件</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;scroll&#x27;</span>, debounce(handle, <span class="number">1000</span>));</span><br></pre></td></tr></table></figure><h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><p>高频事件触发，但在 n 秒内只会执行一次，所以节流会稀释函数的执行频率。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">let</span> canRun = <span class="literal">true</span>; <span class="comment">// 通过闭包保存一个标记</span></span><br><span class="line">     <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (!canRun) <span class="keyword">return</span>; <span class="comment">// 在函数开头判断标记是否为 true，不为 true 则 return</span></span><br><span class="line">       canRun = <span class="literal">false</span>; <span class="comment">// 立即设置为 false</span></span><br><span class="line">       <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123; <span class="comment">// 将外部传入的函数的执行放在 setTimeout 中</span></span><br><span class="line">         fn.apply(<span class="built_in">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">         <span class="comment">// 最后在 setTimeout 执行完毕后再把标记设置为 true(关键) </span></span><br><span class="line">         <span class="comment">//表示可以执行下一次循环了。当定时器没有执行的时候</span></span><br><span class="line">         <span class="comment">//标记永远是 false，在开头被 return 掉</span></span><br><span class="line">         canRun = <span class="literal">true</span>;</span><br><span class="line">       &#125;, <span class="number">500</span>);</span><br><span class="line">     &#125;;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(e.target.innerWidth, e.target.innerHeight);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;resize&#x27;</span>, throttle(sayHi));</span><br></pre></td></tr></table></figure><h2 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h2><p> 函数节流不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数，而函数防抖只是在最后一次事件后才触发一次函数。 比如在页面的无限加载场景下，我们需要用户在滚动页面时，每隔一段时间发一次 Ajax 请求，而不是在用户停下滚动页面操作时才去请求数据。这样的场景，就适合用节流技术来实现。</p><p>举例：</p><p>防抖函数：有这样一个按钮，他提供查看你未来老婆的样子，当你在一定时间内多次点击查询时，他只会在你最后一次点击以后，<br>采取执行查询操作。</p><p>节流函数：当你在玩LOL的时候，你在放出大招后的一段时间内，再次点击放大招是不启作用的，因为有一个冷却时间。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;防抖&quot;&gt;&lt;a href=&quot;#防抖&quot; class=&quot;headerlink&quot; title=&quot;防抖&quot;&gt;&lt;/a&gt;防抖&lt;/h2&gt;&lt;p&gt;函数防抖（deb</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>生命周期</title>
