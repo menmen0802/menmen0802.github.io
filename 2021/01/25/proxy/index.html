@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2021 - Hexo</title>
+  <title>proxy - Hexo</title>
   
 
   
@@ -58,7 +56,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +307,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -385,519 +383,284 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/25/proxy/">
+      <h1 class="title">
         proxy
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Proxy 是什么?Proxy 是由 ES6 原生提供的一个构造函数
-Proxy 指在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。
-作用Proxy 的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。
-Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（me...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-25</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 25, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="proxy" data-path="/2021/01/25/proxy/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h2 id="Proxy-是什么"><a href="#Proxy-是什么" class="headerlink" title="Proxy 是什么?"></a>Proxy 是什么?</h2><p><code>Proxy</code> 是由 <code>ES6</code> 原生提供的一个构造函数</p>
+<p><code>Proxy</code> 指在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>Proxy</code> 的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。</p>
+<p><code>Proxy</code> 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（<code>meta programming</code>），即对编程语言进行编程。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>Proxy</code> 作为一个构造函数，它接受两个参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler)</span><br></pre></td></tr></table></figure>
+<p>第一个参数是所要代理的目标对象即<code>target</code>：</p>
+<p><code>target</code>要使用 <code>Proxy</code> 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。</p>
+<p>第二个参数是一个配置对象，对于每一个被代理的操作，需要提供一个对应的处理函数即<code>handler</code>，该函数将拦截对应的操作。</p>
+<p><code>handler</code>一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 <code>p</code> 的行为。</p>
+<p>Proxy.revocable()</p>
+<p>创建一个可撤销的<code>Proxy</code>对象。</p>
+<h3 id="配置对象的方法"><a href="#配置对象的方法" class="headerlink" title="配置对象的方法"></a>配置对象的方法</h3><p>有一个 get 方法，用来拦截对目标对象属性的访问请求，而 get 方法两个参数分别是目标对象（target）和所要访问的属性（prop）。</p>
+<p><strong>注意</strong>：要使得 Proxy 起作用，必须针对 Proxy 实例进行操作，而不是针对目标对象进行操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//new Proxy()表示生成一个Proxy实例</span></span><br><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, &#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params">target, propKey</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">35</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(proxy.name) <span class="comment">// 35</span></span><br><span class="line"><span class="built_in">console</span>.log(proxy.sex) <span class="comment">// 35</span></span><br><span class="line"><span class="built_in">console</span>.log(proxy.age) <span class="comment">// 35</span></span><br><span class="line"><span class="comment">//可以看到，由于拦截函数总是返回35，所以访问任何属性都得到35。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果handler没有设置任何拦截，那就等同于直接通向原对象。</span></span><br><span class="line"><span class="keyword">var</span> target = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> handler = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> proxy2 = <span class="keyword">new</span> <span class="built_in">Proxy</span>(target, handler);</span><br><span class="line">proxy2.a = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">target.a <span class="comment">// &quot;b&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Proxy 实例也可以作为其他对象的原型对象。</span></span><br><span class="line"><span class="keyword">var</span> proxy3 = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;,&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">35</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> obj = Obeject.create(proxy3)</span><br><span class="line"><span class="built_in">console</span>.log(obj.name) <span class="comment">// 35</span></span><br><span class="line"><span class="comment">//上述代码proxy3对象是obj对象的原型，obj对象本身并没有name属性，所以根据原型链，会在proxy3对象上读取该属性，导致被拦截。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//同一个拦截器函数，可以设置拦截多个操作。</span></span><br><span class="line"><span class="keyword">var</span> handler = &#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params">target, name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (name === <span class="string">&#x27;prototype&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.prototype;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;Hello, &#x27;</span> + name;</span><br><span class="line">    &#125;,</span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span>(<span class="params">target, thisBinding, args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> args[<span class="number">0</span>];</span><br><span class="line">    &#125;,</span><br><span class="line">    construct: <span class="function"><span class="keyword">function</span>(<span class="params">target, args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="attr">value</span>: args[<span class="number">1</span>]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fproxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;, handler);</span><br><span class="line">fproxy(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">new</span> fproxy(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">// &#123;value: 2&#125;</span></span><br><span class="line">fproxy.prototype === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br><span class="line">fproxy.foo === <span class="string">&quot;Hello, foo&quot;</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Proxy-实例的方法"><a href="#Proxy-实例的方法" class="headerlink" title="Proxy 实例的方法"></a>Proxy 实例的方法</h2><p><strong>get()</strong></p>
+<p><strong><code>get</code> 方法用于拦截某个属性的读取操作。</strong></p>
+<p>可接受三个参数：</p>
+<ol>
+<li>目标对象（<code>target</code>）</li>
+<li>属性名（<code>prop</code>）</li>
+<li><code>proxy</code> 实例本身（<code>receiver</code>）（严格地说，是操作行为所针对的对象），其中最后一个参数可选。</li>
+</ol>
+<p><strong>set()</strong></p>
+<p><strong><code>set</code>用来拦截某个属性的赋值操作。</strong></p>
+<p>可接受四个参数：</p>
+<ol>
+<li>目标对象（<code>target</code>）</li>
+<li>属性名（<code>prop</code>）</li>
+<li>属性值（<code>value</code>）</li>
+<li><code>Proxy</code> 实例本身（<code>receiver</code>），其中最后一个参数可选。</li>
+</ol>
+<p><strong>apply()</strong></p>
+<p><code>apply</code> 方法拦截函数的调用、<code>call</code> 和 <code>apply</code> 操作。</p>
+<p><code>apply</code> 方法可接受三个参数</p>
+<ol>
+<li>目标对象 （<code>target</code>）</li>
+<li>目标对象的上下文对象（<code>ctx</code>）</li>
+<li>目标对象的参数数组（<code>…arguments</code>）</li>
+</ol>
+<p><strong>has()</strong></p>
+<p><code>has()</code>方法用来拦截 <code>HasProperty</code> 操作，即判断对象是否具有某个属性时，这个方法会生效。<br>典型的操作就是 <code>in</code> 运算符。</p>
+<p><code>has()</code>方法可接受两个参数：</p>
+<ol>
+<li>目标对象</li>
+<li>需查询的属性名。</li>
+</ol>
+<p><strong>construct()</strong></p>
+<p>用于拦截 <code>new</code> 命令，拦截对象的写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">  construct (target, args, newTarget) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> target(...args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>construct()</code> 可接受三个参数：</p>
+<ol>
+<li><code>target</code>：目标对象。</li>
+<li><code>args</code>：构造函数的参数数组。</li>
+<li><code>newTarget</code>：创造实例对象时，<code>new</code> 命令作用的构造函数。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;, &#123;</span><br><span class="line">  construct: <span class="function"><span class="keyword">function</span>(<span class="params">target, args</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;called: &#x27;</span> + args.join(<span class="string">&#x27;, &#x27;</span>));</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">value</span>: args[<span class="number">0</span>] * <span class="number">10</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">(<span class="keyword">new</span> p(<span class="number">1</span>)).value</span><br><span class="line"><span class="comment">// &quot;called: 1&quot;</span></span><br><span class="line"><span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：</p>
+<p>由于 <code>construct()</code>拦截的是构造函数，所以它的目标对象必须是函数，否则就会报错。</p>
+<p><code>construct()</code>方法中的 <code>this</code> 指向的是 <code>handler</code>，而不是实例对象。</p>
+<h2 id="headler对象的方法"><a href="#headler对象的方法" class="headerlink" title="headler对象的方法"></a>headler对象的方法</h2><p><code>handler</code> 对象是一个容纳一批特定属性的占位符对象。它包含有 <code>Proxy</code> 的各个捕获器（<code>trap</code>）。</p>
+<p>所有的捕捉器是可选的。如果没有定义某个捕捉器，那么就会保留源对象的默认行为。</p>
+<p>handler.getPrototypeOf()<br><code>Object.getPrototypeOf</code> 方法的捕捉器。</p>
+<p>handler.setPrototypeOf()<br><code>Object.setPrototypeOf</code> 方法的捕捉器。</p>
+<p>handler.isExtensible()<br><code>Object.isExtensible</code> 方法的捕捉器。</p>
+<p>handler.preventExtensions()<br><code>Object.preventExtensions</code> 方法的捕捉器。</p>
+<p>handler.getOwnPropertyDescriptor()<br><code>Object.getOwnPropertyDescriptor</code> 方法的捕捉器。</p>
+<p>handler.defineProperty()<br><code>Object.defineProperty</code> 方法的捕捉器。</p>
+<p>handler.has()<br><code>in</code> 操作符的捕捉器。</p>
+<p>handler.get()<br>属性读取操作的捕捉器。</p>
+<p>handler.set()<br>属性设置操作的捕捉器。</p>
+<p>handler.deleteProperty()<br><code>delete</code> 操作符的捕捉器。</p>
+<p>handler.ownKeys()<br><code>Object.getOwnPropertyNames</code> 方法和 <code>Object.getOwnPropertySymbols</code> 方法的捕捉器。</p>
+<p>handler.apply()<br>函数调用操作的捕捉器。</p>
+<p>handler.construct()<br><code>new</code> 操作符的捕捉器。</p>
+<p><a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/introduction.html">点我 VUE 3官网</a></p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/25/proxy/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/25/proxy/>http://example.com/2021/01/25/proxy/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T23:47:50+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 25, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/21/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/">
-        节流防抖
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。
-防抖函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。
-如，持续触发scroll事件时，并不执行handle函数，当1000毫秒内没有触发scroll事件时，才会延时触发scroll事件。
-123456789...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/25/proxy/&title=proxy - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/25/proxy/&title=proxy - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/25/proxy/&title=proxy - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-21</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/21/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/19/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
-        生命周期
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        react.js 生命周期
-react 生命周期分三种状态: 1. 实例期 2.存在期 3.销毁期
 
-实例期
-1、constructor()数据初始化；
-2、getDerivedStateFromProps(props,state)调用render之前调用，并在初始挂载以及后续更新时都会被调用，返回一个对象来更新state，若返回null则不更新任何内容；
-3、render检查props和s...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-19</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/01/19/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/'>
-            Read More
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/01/21/%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96/'>
+          <p class='title'>节流防抖<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。
+防抖函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/18/webpack%E5%B8%B8%E8%A7%81%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%8F%8A%E4%BD%9C%E7%94%A8/">
-        webpack常见插件和loader及作用
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        webpack常见插件和loader及作用
-loaderwebpack将一切文件视为模块，但是webpack原生是只能解析js文件，如果想将其他文件也打包的话，就会用到loader。 所以Loader的作用是让webpack拥有了加载和解析非JavaScript文件的能力。
-常见loader
-
-style-loader：将CSS添加到DOM的内联样式标签style里
-css-loader：允...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-18</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/18/webpack%E5%B8%B8%E8%A7%81%E6%8F%92%E4%BB%B6%E5%92%8Cloader%E5%8F%8A%E4%BD%9C%E7%94%A8/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/17/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
-        水平垂直居中
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-定位： 盒子宽高已知
-
-1234position: absolute; left: 50%; top: 50%;margin-left:-自身一半宽度;margin-top: -自身一半高度;
-
-table-cell布局
-
-12345父级：display: table-cell; vertical-align: middle; 子级：margin: 0 auto;
-
-定位 + transf...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-17</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/17/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        Less/Sass/Scss的区别
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Less/Sass/Scss的区别
-一. Sass/Scss、Less是什么?
-Sass (Syntactically Awesome Stylesheets)是一种动态样式语言，Sass语法属于缩排语法，比css比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。
-Less也是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量，继承，运算， ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/15/Less-Sass-Scss%E7%9A%84%E5%8C%BA%E5%88%AB/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/14/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
-        什么是闭包？
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        什么是闭包？
-
-闭包（closure）是 JavasSript 的一大难点，也是它的特色。很多高级应用都要依靠闭包来实现。
-
-闭包就是能够读取其他函数内部变量的函数。
-例如在javascript中，只有函数内部的子函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
-为什么要使用闭包？先介绍一下全局变量和局部变量的优缺点
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-14</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/14/%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/">
-        JavaScript深入之new的模拟实现
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        newJavaScript深入之new的模拟实现
-
-new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
-
-模拟 new 之前，先看看 new 实现了哪些功能。例子：
-12345678910111213141516171819202122// Otaku 御宅族，简称宅function Otaku (name, age) &#123;    this.name = ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        cookie、sessionStorage和localStorage的区别
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        cookie、sessionStorage和localStorage的区别
-cookie能存储内容较小，在4k左右，一般用作保存用户登录状态、记住密码，记住账号使用。不清除的话会一直存在，可以设置过期时间自动清除，设置的时候可以设置在不同的域下面。每次在和服务端交互都会放在header里面，所以若是储存太多会影响性能。
-localStoragelocalStorage生命周期是永久，这意味着...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        原型及原型链
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        原型及原型链
-为什么需要原型及原型链？看一个例子：
-12345678910111213function Person(name, age) &#123;  this.name = name;  this.age = age;  this.eat = function() &#123;    console.log(age + &quot;岁的&quot; + name + &quot;在吃饭...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-11</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -905,87 +668,28 @@ localStoragelocalStorage生命周期是永久，这意味着...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
+  <header>
     
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
 
-  
 
-  
-    
-    
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">Proxy 是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">配置对象的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy-%E5%AE%9E%E4%BE%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">Proxy 实例的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#headler%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">headler对象的方法</span></a></li></ol>
+    </div>
+  </section>
 
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -995,14 +699,14 @@ localStoragelocalStorage生命周期是永久，这意味着...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="proxy";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
