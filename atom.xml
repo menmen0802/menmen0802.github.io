@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-25T15:47:50.746Z</updated>
+  <updated>2021-01-26T13:57:58.784Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css选择器有哪些</title>
+    <link href="http://example.com/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B/"/>
+    <id>http://example.com/2021/01/26/css%E9%80%89%E6%8B%A9%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B/</id>
+    <published>2021-01-26T13:57:39.000Z</published>
+    <updated>2021-01-26T13:57:58.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>*通用选择器：选择所有元素，不参与计算优先级，兼容性 IE6+</p><p><code>#X id</code> 选择器：选择 id 值为 X 的元素，兼容性：IE6+</p><p>.<code>X</code> 类选择器： 选择 class 包含 X 的元素，兼容性：IE6+</p><p><code>X Y</code> 后代选择器： 选择满足 X 选择器的后代节点中满足 Y 选择器的元素，兼容性：IE6+</p><p><code>X</code> 元素选择器： 选择标所有签为 X 的元素，兼容性：IE6+</p><p><code>:link</code>，:visited，:focus，:hover，:active 链接状态： 选择特定状态的链接元素，顺序 LoVe HAte，兼容性: IE4+</p><p><code>X + Y</code> 直接兄弟选择器：在X 之后第一个兄弟节点中选择满足 Y 选择器的元素，兼容性： IE7+</p><p><code>X &gt; Y</code> 子选择器： 选择 X 的子元素中满足 Y 选择器的元素，兼容性： IE7+</p><p><code>X ~ Y</code> 兄弟： 选择X 之后所有兄弟节点中满足 Y 选择器的元素，兼容性： IE7+</p><p><code>[attr]：</code>选择所有设置了 attr 属性的元素，兼容性 IE7+</p><p><code>[attr=value]：</code>选择属性值刚好为 value 的元素</p><p><code>[attr~=value]</code>：选择属性值为空白符分隔，其中一个的值刚好是 value 的元素</p><p><code>[attr|=value]：</code>选择属性值刚好为 value 或者 value-开头的元素</p><p><code>[attr^=value]：</code>选择属性值以 value 开头的元素</p><p><code>[attr$=value]：</code>选择属性值以 value 结尾的元素</p><p><code>[attr=value]*：</code>选择属性值中包含 value 的元素</p><p><code>[:checked]：</code>选择单选框，复选框，下拉框中选中状态下的元素，兼容性：IE9+</p><p><code>X:after, X::after：</code>after 伪元素，选择元素虚拟子元素（元素的最后一个子元素），CSS3 中::表示伪元素。兼容性:after 为 </p><p><code>IE8+</code>，::after 为 IE9+</p><p><code>:hover</code>：鼠标移入状态的元素，兼容性 a 标签 IE4+， 所有元素 IE7+</p><p><code>:not(selector)</code>：选择不符合 selector 的元素。不参与计算优先级，兼容性：IE9+</p><p><code>::first-letter</code>：伪元素，选择块元素第一行的第一个字母，兼容性 IE5.5+</p><p><code>::first-line</code>：伪元素，选择块元素的第一行，兼容性 IE5.5+</p><p><code>:nth-child(an + b)</code>：伪类，选择前面有 an + b - 1 个兄弟节点的元素，其中 n &gt;= 0， 兼容性 IE9+</p><p><code>:nth-last-child(an + b)</code>：伪类，选择后面有 an + b - 1 个兄弟节点的元素 其中 n &gt;= 0，兼容性 IE9+</p><p><code>X:nth-of-type(an+b)</code>：伪类，X 为选择器，解析得到元素标签，选择前面有 an + b - 1 个相同标签兄弟节点的元素。兼容性 IE9+</p><p><code>X:nth-last-of-type(an+b)</code>：伪类，X 为选择器，解析得到元素标签，选择后面有 an+b-1 个相同标签兄弟节点的元素。兼容性 IE9+</p><p><code>X:first-child</code>：伪类，选择满足 X 选择器的元素，且这个元素是其父节点的第一个子元素。兼容性 IE7+</p><p><code>X:last-child</code>：伪类，选择满足 X 选择器的元素，且这个元素是其父节点的最后一个子元素。兼容性 IE9+</p><p><code>X:only-child</code>：伪类，选择满足 X 选择器的元素，且这个元素是其父元素的唯一子元素。兼容性 IE9+</p><p><code>X:only-of-type</code>：伪类，选择 X 选择的元素，解析得到元素标签，如果该元素没有相同类型的兄弟节点时选中它。兼容性 IE9+</p><p><code>X:first-of-type</code>：伪类，选择 X 选择的元素，解析得到元素标签，如果该元素 是此此类型元素的第一个兄弟。选中它。兼容性 IE9+</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;*通用选择器：选择所有元素，不参与计算优先级，兼容性 IE6+&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;#X id&lt;/code&gt; 选择器：选择 id 值为 X 的元素，兼容性：IE6+&lt;/p&gt;
+&lt;p&gt;.&lt;code&gt;X&lt;/code&gt; 类选择器： 选择 class 包含 X 的元素，兼容性：</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css sprite是什么 有什么优缺点？</title>
+    <link href="http://example.com/2021/01/26/%E6%98%AF%E4%BB%80%E4%B9%88-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F/"/>
+    <id>http://example.com/2021/01/26/%E6%98%AF%E4%BB%80%E4%B9%88-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F/</id>
+    <published>2021-01-26T13:56:17.000Z</published>
+    <updated>2021-01-26T13:57:04.754Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>将多个小图片拼接到一个图片中。通过 background-position 和元素尺寸调节需要显示的背景图案。</p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul><li>减少 HTTP 请求数，极大地提高页面加载速度</li><li>增加图片信息重复度，提高压缩比，减少图片大小</li><li>更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现</li></ul><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul><li>图片合并麻烦</li><li>维护麻烦，修改一个图片可能需要重新布局整个图片，样式</li><li></li></ul><h2 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h2><p>它们都能让元素不可见</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul><li><code>display:none</code>;会让元素完全从渲染树中消失，渲染的时候不占据任何空间；</li><li><code>visibility: hidden</code>;不会让元素从渲染树消失，渲染时元素继续占据空间，只是内容不可见。</li><li><code>display: none</code>;是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改子孙节点属性无法显示；</li><li><code>visibility: hidden</code>;是继承属性，子孙节点由于继承了 <code>hidden</code> 而消失，通过设置 <code>visibility: visible</code>，可以让子孙节点显示。</li><li>修改常规流中元素的 <code>display</code> 通常会造成文档重排。</li><li>修改 <code>visibility</code> 属性只会造成本元素的重绘。</li><li>读屏器不会读取 <code>display: none</code>;元素内容；会读取 <code>visibility: hidden</code>;元素内容。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;将多个小图片拼接到一个图片中。通过 background-position 和元素尺寸调节需要显示的背景图案。&lt;/p&gt;
+&lt;h2 id=&quot;优点</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>观察者模式</title>
+    <link href="http://example.com/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://example.com/2021/01/26/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</id>
+    <published>2021-01-26T13:35:22.000Z</published>
+    <updated>2021-01-26T13:35:33.074Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="观察者模式（Observer-Pattern）"><a href="#观察者模式（Observer-Pattern）" class="headerlink" title="观察者模式（Observer Pattern）"></a>观察者模式（<code>Observer Pattern</code>）</h2><p><strong>观察者模式是一种对象行为模式</strong>，它定义对象间的一种一对多的依赖关系。</p><p>当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新，在观察者模式中，主体是通知的发布者，它发出通知时并不需要知道谁是它的观察者，可以有任意数目的观察者订阅并接收通知。</p><p>观察者模式不仅被广泛应用于软件界面元素之间的交互，在业务对象之间的交互、权限管理等方面也有广泛的应用。</p><p>观察者模式（<code>Observer</code>）完美的将观察者和被观察者的对象分开，假如说用户界面可以作为一个观察者，业务数据是被观察者，用户界面观察业务数据的变化，发现数据变化后，就会显示在界面上。</p><p>简而言之，<strong>观察者设计模式定义了对象间的一种一对多的组合关系，以便一个对象的状态发生变化时，所有依赖于它的对象都得到通知并自动刷新。</strong></p><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol><li>一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。</li><li>一个对象需要通知其他对象发生反应，但不知道具体有多少对象需要被改变，可以降低对象之间的耦合度。</li><li>一个对象必须通知其他对象，而并不知道这些对象是谁。</li><li>需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。</li></ol><h2 id="模式组成"><a href="#模式组成" class="headerlink" title="模式组成"></a>模式组成</h2><p>在观察着模式中，通常包含以下角色：</p><p>目标（<code>Subject</code>）</p><p>观察目标（<code>ConcresteSubject</code>）</p><p>观察者（<code>Observer</code>）</p><p>具体观察者（<code>ConcreteObserver</code>）</p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>观察者模式可以实现 表示层和数据逻辑层的分离，并降低观察目标和观察者之间的耦合度；</p><p>观察者模式支持简单广播通信，自动通知所有已经订阅过的对象；</p><p>观察者模式 符合开闭原则的要求；</p><p>观察目标和观察者之间的抽象耦合关系能够单独扩展以及中庸。</p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>当一个观察目标有多个直接或间接的观察者时，通知所有观察者的过程将会话费很多时间。</p><p>当观察目标和观察者之间存在循环依赖时，观察目标会触发他们之间进行循环调用，可能导致系统崩溃。</p><p>观察者模式缺少相应机制，让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;观察者模式（Observer-Pattern）&quot;&gt;&lt;a href=&quot;#观察者模式（Observer-Pattern）&quot; class=&quot;headerlink&quot; title=&quot;观察者模式（Observer Pattern）&quot;&gt;&lt;/a&gt;观察者模式（&lt;code&gt;Obser</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>proxy</title>
@@ -380,26 +443,6 @@
       
     <summary type="html">&lt;p&gt;这是我的博客第一篇&lt;br&gt;hexo new 文章名称&lt;br&gt;npm install hexo-deployer-git –save&lt;br&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy  &lt;/p&gt;
 </summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2020/12/25/hello-world/"/>
-    <id>http://example.com/2020/12/25/hello-world/</id>
-    <published>2020-12-25T11:56:53.955Z</published>
-    <updated>2020-12-25T11:56:53.955Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
       
     
     

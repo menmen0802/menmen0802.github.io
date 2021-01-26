@@ -401,6 +401,144 @@
   
     
     <h2 class="article-title" >
+      <a href="/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/">
+        JavaScript深入之new的模拟实现
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        newJavaScript深入之new的模拟实现
+
+new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
+
+模拟 new 之前，先看看 new 实现了哪些功能。例子：
+12345678910111213141516171819202122// Otaku 御宅族，简称宅function Otaku (name, age) &#123;    this.name = ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2021-01-13</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/01/13/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8Bnew%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        cookie、sessionStorage和localStorage的区别
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        cookie、sessionStorage和localStorage的区别
+cookie能存储内容较小，在4k左右，一般用作保存用户登录状态、记住密码，记住账号使用。不清除的话会一直存在，可以设置过期时间自动清除，设置的时候可以设置在不同的域下面。每次在和服务端交互都会放在header里面，所以若是储存太多会影响性能。
+localStoragelocalStorage生命周期是永久，这意味着...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2021-01-12</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/01/12/cookie%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+        原型及原型链
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        原型及原型链
+为什么需要原型及原型链？看一个例子：
+12345678910111213function Person(name, age) &#123;  this.name = name;  this.age = age;  this.eat = function() &#123;    console.log(age + &quot;岁的&quot; + name + &quot;在吃饭...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2021-01-11</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/01/11/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
       <a href="/2020/12/29/%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/">
         基础类型
       </a>
@@ -714,50 +852,6 @@ React 早期版本，类组件可以通过继承PureComponent来优化一些不�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/25/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-25</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/25/hello-world/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -772,8 +866,14 @@ Qu...
           </a>
         
         <p class="current">
-          2 / 2
+          2 / 3
         </p>
+        
+          <a class="next" rel="next" href="/page/3/">
+            <section class="post next white-box shadow">
+              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
