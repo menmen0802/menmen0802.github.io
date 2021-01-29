@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-26T14:16:48.274Z</updated>
+  <updated>2021-01-29T14:02:14.738Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue中几种类型的插槽</title>
+    <link href="http://example.com/2021/01/29/vue%E4%B8%AD%E5%87%A0%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%8F%92%E6%A7%BD/"/>
+    <id>http://example.com/2021/01/29/vue%E4%B8%AD%E5%87%A0%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%8F%92%E6%A7%BD/</id>
+    <published>2021-01-29T13:53:50.000Z</published>
+    <updated>2021-01-29T14:02:14.738Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="vue的slot主要分三种："><a href="#vue的slot主要分三种：" class="headerlink" title="vue的slot主要分三种："></a>vue的slot主要分三种：</h3><p><strong>默认插槽，具名插槽，作用域插槽</strong></p><p>插槽：<br><a href="https://blog.csdn.net/Menqq/article/details/107743932">https://blog.csdn.net/Menqq/article/details/107743932</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;vue的slot主要分三种：&quot;&gt;&lt;a href=&quot;#vue的slot主要分三种：&quot; class=&quot;headerlink&quot; title=&quot;vue的slot主要分三种：&quot;&gt;&lt;/a&gt;vue的slot主要分三种：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;默认插槽，具名插槽，作用域插</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue生命周期</title>
+    <link href="http://example.com/2021/01/29/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>http://example.com/2021/01/29/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
+    <published>2021-01-29T13:52:15.000Z</published>
+    <updated>2021-01-29T13:53:08.955Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>生命周期指的是：组件从初始化开始到结束的过程  或者是生命周期是描述组件从开始到结束的过程，每个组件都具有生命周期。</strong></p><ol><li>创建前 beforeCreate：vue元素的挂载元素el和数据都为undefined，还未初始化；在加载实例时触发。</li><li>创建后created：初始化完成事件。vue实例的数据对象data有了，el还没有；可以使用数据，更改数据，在这里更改数据不会触发updated函数。可以做一些初始数据的获取，在当前阶段无法与Dom进行交互。</li><li>挂载前beforeMount：在这之前template模板已导入渲染函数编译。而当前阶段虚拟Dom已经创建完成，即将开始渲染。在此时也可以对数据进行更改，不会触发updated。</li><li>挂载后mounted：挂载元素完成，获取dom节点，真实的Dom挂载完毕，数据完成双向绑定，可以访问到Dom节点，使用$refs属性对Dom进行操作。也可以向后台发送请求，拿到返回数据。接口请求一般放在<code>mounted</code>中。</li><li>更新前beforeUpdate：data变化（响应式数据）发生更新，虚拟dom重新渲染之前被触发，可以在当前阶段进行更改数据，不会造成重渲染。</li><li>更新后updated：当前阶段组件Dom已完成更新。要注意避免在此期间更改数据，因为这可能会导致无限循环的更新。</li><li>销毁前beforeDestroy：在当前阶段实例完全可以被使用，我们可以在这时进行善后收尾工作，比如清除计时器。</li><li>销毁后destoryed：实例销毁之后，这个时候只剩下了dom空壳。组件已被拆解，数据绑定被卸除，监听被移出，子实例也统统被销毁。</li></ol><p> <strong>分为11个周期，都是函数类型，常用的有8个阶段。</strong></p><p> <strong>接口请求一般放在<code>mounted</code>中，但需要注意的是服务端渲染时不支持<code>mounted</code>，需要放到<code>created</code>中。</strong></p><p> 剩下的三个周期分别是：</p><ol start="9"><li>Updated之后的有activated(keep-alive 组件激活时调用。)</li><li>deactivated(keep-alive 组件停用时调用).</li><li>errorCaptured:当捕获一个来自子孙组件的错误时被调用。</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="comment">// template:&#x27;&lt;h1&gt;哈哈哈&lt;/h1&gt;&#x27;,</span></span><br><span class="line">    data:&#123;</span><br><span class="line">        name:<span class="string">&quot;liu&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 生命周期钩子函数 就是VUE规定的一些在固定阶段执行的函数</span></span><br><span class="line">    <span class="comment">// 语法上 跟 data和el、methods等 同级</span></span><br><span class="line">    <span class="function"><span class="title">beforeCreate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 创造之前</span></span><br><span class="line">        <span class="comment">// 不能获取data和methods里的数据</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;beforeCreate&#x27;</span>);</span><br><span class="line">        <span class="keyword">debugger</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">created</span>(<span class="params"></span>)</span>&#123;            </span><br><span class="line">       <span class="comment">// 能获取data和methods里的数据</span></span><br><span class="line">       <span class="comment">// 一般把ajax请求的发送写到这里</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeMount</span>(<span class="params"></span>)</span> &#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="comment">// 在此时DOM已经渲染完成</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeUpdate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="comment">// 在视图更新时会触发其中函数</span></span><br><span class="line">       <span class="comment">// 函数在视图更新前执行</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">updated</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="comment">// 在视图更新时会触发其中函数</span></span><br><span class="line">       <span class="comment">// 函数在视图更新后执行</span></span><br><span class="line">       <span class="comment">// 不要写会触发视图更新的代码</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">beforeDestroy</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">destroyed</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.$destory();<span class="comment">//手动销毁该实例，双向数据绑定没了</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20201104085754980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01lbnFx,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20201104085754980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01lbnFx,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;生命周期指的是：组件从初始化开始到结束的过程  或者是生命周期是描述组件从开始到结束的过程，每个组件都具有生命周期。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建前 beforeCreate：vue元素的挂载元素el和数据都为undefined，还未初始</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>css选择器有哪些</title>
@@ -401,48 +443,6 @@
     <summary type="html">&lt;p&gt;我们大部分 React 类组件可以保存状态，而函数组件不能？ 并且类组件具有生命周期，而函数组件却不能？&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;React 早期版本，类组件可以通过继承PureComponent来优化一些不必要的渲染，相对于函数组件，React 官网没有提</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>react.js组件传值</title>
-    <link href="http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/"/>
-    <id>http://example.com/2020/12/26/react-js%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/</id>
-    <published>2020-12-26T01:00:11.000Z</published>
-    <updated>2021-01-14T15:22:15.568Z</updated>
-    
-    <content type="html"><![CDATA[<p>我是组件传值<br>hexo new 文件名称<br>hexo clean<br>hexo generate<br>hexo deploy推送</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我是组件传值&lt;br&gt;hexo new 文件名称&lt;br&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy推送&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>promise总结</title>
-    <link href="http://example.com/2020/12/25/promise%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2020/12/25/promise%E6%80%BB%E7%BB%93/</id>
-    <published>2020-12-25T12:36:26.000Z</published>
-    <updated>2020-12-26T00:53:51.134Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是我的博客第一篇<br>hexo new 文章名称<br>npm install hexo-deployer-git –save<br>hexo clean<br>hexo generate<br>hexo deploy  </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;这是我的博客第一篇&lt;br&gt;hexo new 文章名称&lt;br&gt;npm install hexo-deployer-git –save&lt;br&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy  &lt;/p&gt;
-</summary>
       
     
     
